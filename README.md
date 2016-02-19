@@ -1,10 +1,13 @@
 # Tickr
 a stock portfolio management application
 
+## Dependencies
+
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
 ## Installation
 
-1. Download VirtualBox 5.0.14 for your operating system: https://www.virtualbox.org/wiki/Downloads.
-2. Launch the Ubuntu Linux virtual machine by double-clicking on the Project1-Team-03.ova file.
-3. Clone the repository: `git clone git@github.com:saraswatayu/Tickr`.
-4. Navigate to the repository: `cd Tickr`.
-5. Choose your branch (`git checkout [branch_name]`):
+1. Clone the repository: `git clone git@github.com:saraswatayu/Tickr`.
+2. Navigate to the repository: `cd Tickr`.
+3. [First Time] Add the virtual machine to VirtualBox: `Project1-Team-03.ova`
+3. Choose your branch (`git checkout [branch_name]`):
