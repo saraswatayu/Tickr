@@ -2,7 +2,7 @@
 
 function signIn() { ?>
 	<script type="text/javascript">
-		window.location = "./tickr.html";
+		window.location = "tickr/dashboard.php";
 	</script>  
 <?php 
 }
