@@ -36,10 +36,12 @@
                                 </span>
                             </div>
                             
-                            <table class="table table-hover">
-                                <?php printStockListing(); ?>
-                            </table>
+                            
                         </div>
+                        
+                        <table class="table table-hover">
+                            <?php printStockListing(); ?>
+                        </table>
                     </div>
                 </div>
                 

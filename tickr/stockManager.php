@@ -7,8 +7,15 @@ function printStockListing() {
     
     foreach ($stocks as $stock) {
         echo "<tr>".
-             "<td><input type=\"checkbox\" aria-label=\"...\"></td>".
-             "<td>$stock</td>".
+             "<td>".
+             "<label class='checkbox-inline'>".
+             "<input type='checkbox' value=''>".
+             "$stock".
+             "</label>".
+             "</td>".
+             "<td>".
+             "<span class='label label-success'>6.8 %</span>".
+             "</td>".
              "</tr>";
     }
 }
