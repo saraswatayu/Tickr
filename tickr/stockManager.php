@@ -20,8 +20,11 @@ function printTickerList() {
 function printStockInformationList() {
     global $stocks;
     
+    $index = 0;
     foreach ($stocks as $stock) {
+        $index++;
         echo "<tr>".
+             "<th>$index</th>".
              "<td>$stock</td>".
              "<td>Apple, Inc.</td>".
              "<td>20</td>".

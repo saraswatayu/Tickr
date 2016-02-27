@@ -79,9 +79,10 @@
                         <table class="table table-default">
                             <thead>
                                 <tr>
-                                    <th>Ticker Symbol</th>
-                                    <th>Company Name</th>
-                                    <th>Quantity Owned</th>
+                                    <th>#</th>
+                                    <th>Symbol</th>
+                                    <th>Company</th>
+                                    <th>Equity</th>
                                     <th>Current Price</th>
                                     <th>Actions</th>
                                 </tr>
