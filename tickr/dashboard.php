@@ -46,13 +46,36 @@
                 <!--Center Content-->
                 <div class="col-md-6">
                     <!--Graph-->
-                    <div class="well">
-                        ...
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Graph</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="well">
+                                graph goes here
+                            </div>
+                            
+                            <div class="btn-group" role="group" aria-label="graph-span-picker">
+                                <button type="button" class="btn btn-default">1 Day</button>
+                                <button type="button" class="btn btn-default">5 Days</button>
+                                <button type="button" class="btn btn-default">1 Month</button>
+                                <button type="button" class="btn btn-default">3 Months</button>
+                                <button type="button" class="btn btn-default">6 Months</button>
+                                <button type="button" class="btn btn-default">All</button>
+                            </div>
+                        </div>
                     </div>
 
                     <!--Stock Listing-->
-                    <div class="well">
-                        ...
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Current Portfolio</h3>
+                        </div>
+                        
+                        <table class="table table-default">
+                            <?php printStockListing(); ?>
+                        </table>
                     </div>
                 </div>
                 
