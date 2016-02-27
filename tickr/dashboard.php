@@ -9,6 +9,7 @@
         
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="navigation/navigation.css" rel="stylesheet">
+        <link href="dashboard.css" rel="stylesheet">
     </head>
     
     <body>
@@ -22,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <!--Stock Picker-->
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Stock Listing</h3>
@@ -40,13 +41,13 @@
                         </div>
                         
                         <table class="table table-hover">
-                            <?php printStockListing(); ?>
+                            <?php printTickerList(); ?>
                         </table>
                     </div>
                 </div>
                 
                 <!--Center Content-->
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <!--Graph-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -76,7 +77,17 @@
                         </div>
                         
                         <table class="table table-default">
-                            <?php printStockListing(); ?>
+                            <thead>
+                                <tr>
+                                    <th>Ticker Symbol</th>
+                                    <th>Company Name</th>
+                                    <th>Quantity Owned</th>
+                                    <th>Current Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            
+                            <?php printStockInformationList(); ?>
                         </table>
                     </div>
                 </div>
