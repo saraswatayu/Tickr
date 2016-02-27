@@ -1,3 +1,4 @@
+<?php include('dataManager.php'); ?>
 <?php include('stockManager.php'); ?>
 
 <html>
@@ -76,7 +77,7 @@
                             <h3 class="panel-title">Current Portfolio</h3>
                         </div>
                         
-                        <table class="table table-default">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -101,7 +102,10 @@
                             <h3 class="panel-title">Bank Information</h3>
                         </div>
                         <div class="panel-body">
-                            Current Balance: $10,000
+                            <h4>
+                            <?php printCurrentBalance(); ?>
+                            <small>in funds remaining</small>
+                            </h4>
                         </div>
                     </div>
 
