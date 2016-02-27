@@ -88,7 +88,6 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            
                             <?php printStockInformationList(); ?>
                         </table>
                     </div>
@@ -114,9 +113,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Stock Information</h3>
                         </div>
-                        <div class="panel-body">
-                            No stock selected.
-                        </div>
+                        <?php printCurrentStockInformation(); ?>
                     </div>
                 </div>
             </div>
