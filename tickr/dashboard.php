@@ -23,10 +23,23 @@
             <div class="row">
                 <!--Stock Picker-->
                 <div class="col-md-3">
-                    <div class="well">
-                        <table class="table table-hover">
-                            <?php printStockListing(); ?>
-                        </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stock Listing</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Filter...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                            </div>
+                            
+                            <table class="table table-hover">
+                                <?php printStockListing(); ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 
@@ -46,13 +59,23 @@
                 <!--Right Content-->
                 <div class="col-md-3">
                     <!--Bank Information-->
-                    <div class="well">
-                        ...
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Bank Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            Current Balance: $10,000
+                        </div>
                     </div>
 
                     <!--Stock Detailed Information-->
-                    <div class="well">
-                        ...
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stock Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            No stock selected.
+                        </div>
                     </div>
                 </div>
             </div>
