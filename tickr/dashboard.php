@@ -1,6 +1,30 @@
 <?php include('dataManager.php'); ?>
 <?php include('stockManager.php'); ?>
 
+/*
+ //AFK LOGOUT
+ 
+ //subtract new timestamp from the old one
+ if(time() - $_SESSION['timestamp'] > 300)
+ //if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] >
+ {
+ alert("5 Minutes over!");
+ 
+ unset($_SESSION['username'], $_SESSION['password'], $_SESSION['timestamp']);
+ 
+ $_SESSION['logged_in'] = false;
+ 
+ header("Location: " . index.html); //redirect to login page
+ exit;
+ }
+ 
+ else
+ {
+ $_SESSION['timestamp'] = time(); //set new timestamp
+ }
+ 
+ */
+
 <html>
     <head>
         <meta charset="utf-8">

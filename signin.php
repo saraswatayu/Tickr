@@ -13,3 +13,15 @@ if(isset($_POST['submit']))
 }
 
 ?>
+
+/*
+
+ //Redirect if condition is satisfied
+ <?php
+ if($_POST['username'] == $username && $_POST['password'] == $password)
+ 
+ header( 'Location: mainpage.php' );
+ ?>
+ 
+
+*/
