@@ -1,6 +1,7 @@
 <?php include('dataManager.php'); ?>
 <?php include('stockManager.php'); ?>
 
+<?php 
 /*
  //AFK LOGOUT
  
@@ -24,6 +25,7 @@
  }
  
  */
+?>
 
 <html>
     <head>
@@ -48,31 +50,83 @@
         <div class="container">
             <div class="row">
                 <!--Stock Picker-->
-                <div class="col-md-2">
+                <div class="col-md-3">
+                    <!--Import-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Stock Listing</h3>
+                            <h3 class="panel-title">Import</h3>
                         </div>
                         
                         <div class="panel-body">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Filter...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go!</button>
-                                </span>
-                            </div>
-                            
-                            
+                            <button type="button" class="btn btn-default">Upload .CSV</button>
+                        </div>
+                    </div>
+                    
+                    <!--Stock Listing-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Current Portfolio</h3>
                         </div>
                         
-                        <table class="table table-hover">
-                            <?php printTickerList(); ?>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Company</th>
+                                        <th>Quantity</th>
+                                        <th>Current Price</th>
+                                        <th>Visibility</th>
+                                    </tr>
+                                </thead>
+                                <?php printStockInformationList(); ?>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--Buy/Sell Stocks-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stock Actions</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="bs_tickerSymbol">Ticker Symbol</label>
+                                    <input type="text" class="form-control" id="bs_tickerSymbol" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bs_companyName">Company Name</label>
+                                    <input type="text" class="form-control" id="bs_companyName" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bs_quantity">Quantity</label>
+                                    <input type="text" class="form-control" id="bs_quantity" placeholder="">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Buy</button>
+                                <button type="submit" class="btn btn-success">Sell</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 
                 <!--Center Content-->
-                <div class="col-md-7">
+                <div class="col-md-6">
+                    <!--Search-->
+                    <form>
+                        <div class="form-group">
+                            <label class="sr-only" for="search">Search</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    
                     <!--Graph-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -95,49 +149,68 @@
                         </div>
                     </div>
 
-                    <!--Stock Listing-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Current Portfolio</h3>
-                        </div>
-                        
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Symbol</th>
-                                    <th>Company</th>
-                                    <th>Equity</th>
-                                    <th>Current Price</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <?php printStockInformationList(); ?>
-                        </table>
-                    </div>
-                </div>
-                
-                <!--Right Content-->
-                <div class="col-md-3">
-                    <!--Bank Information-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Bank Information</h3>
-                        </div>
-                        <div class="panel-body">
-                            <h4>
-                            <?php printCurrentBalance(); ?>
-                            <small>in funds remaining</small>
-                            </h4>
-                        </div>
-                    </div>
-
                     <!--Stock Detailed Information-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Stock Information</h3>
                         </div>
                         <?php printCurrentStockInformation(); ?>
+                    </div>
+                </div>
+                
+                <!--Right Content-->
+                <div class="col-md-3">
+                    <!--Time-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Time</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h4>
+                            02:34:45
+                            <small>EST</small>
+                            </h4>
+                        </div>
+                    </div>
+                    
+                    <!--Bank Information-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Account Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h4>
+                            <?php printCurrentBalance(); ?>
+                            <small>in funds remaining</small>
+                            </h4>
+                            
+                            <h4>
+                            $0
+                            <small>current portfolio value</small>
+                            </h4>
+                        </div>
+                    </div>
+                    
+                    <!--Legend-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Legend</h3>
+                        </div>
+                        
+                        <table class="table">
+                            <?php printGraphLegend(); ?>
+                        </table>
+                    </div>
+                    
+                    <!--Watchlist-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stock Listing</h3>
+                        </div>
+                        
+                        <table class="table table-hover">
+                            <?php printTickerList(); ?>
+                        </table>
                     </div>
                 </div>
             </div>

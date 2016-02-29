@@ -1,6 +1,6 @@
 <?php
 
-$stocks = array('TWTR', 'BAC', 'AAPL', 'GOOG', 'TSLA', 'YHOO');
+$stocks = array('TWTR', 'BAC', 'AAPL', 'GOOG', 'TSLA', 'YHOO', 'FREY');
 
 $currentStock = 'AAPL';
 
@@ -9,12 +9,8 @@ function printTickerList() {
     
     foreach ($stocks as $stock) {
         echo "<tr>".
-             "<td><label class='checkbox-inline'><input type='checkbox' value=''>".
-             "$stock".
-             "</label></td>".
-             "<td class='right-text-align'><font color='green'>".
-             "6.8%".
-             "</font></td>".
+             "<td>$stock</td>".
+             "<td class='right-text-align'><label class='checkbox-inline'><input type='checkbox' value=''></label></td>".
              "</tr>";
     }
 }
@@ -22,16 +18,16 @@ function printTickerList() {
 function printStockInformationList() {
     global $stocks;
     
-    $index = 0;
     foreach ($stocks as $stock) {
-        $index++;
+        $quantity = 20;
+        $currentPrice = 96.62;
+        
         echo "<tr>".
-             "<th>$index</th>".
              "<td>$stock</td>".
              "<td>Apple, Inc.</td>".
-             "<td>20</td>".
-             "<td>$102.00</td>".
-             "<td><button type='button' class='btn btn-success'>Sell</button></td>".
+             "<td>$quantity</td>".
+             "<td>$" . prettyPrintNumber($currentPrice) . "</td>".
+             "<td class='right-text-align'><label class='checkbox-inline'><input type='checkbox' value=''></label></td>".
              "</tr>";
     }
 }
@@ -42,14 +38,21 @@ function printCurrentStockInformation() {
     if ($currentStock == '') {
         echo "<div class='panel-body'>No stock selected.</div>";
     } else {
-        $prev_close = 20;
-        $open = 30;
-        $volume = 500000;
+        $quantity = 20;
+        $currentPrice = 96.62;
+        $percentChange = 8;
+        $openingPrice = 112.1;
 
-        echo "<table class='table table-condensed'>".
-             "<tr><th>Prev Close:</th><td class='right-text-align'>$" . prettyPrintNumber($prev_close) . "</td></tr>".
-             "<tr><th>Open:</th><td class='right-text-align'>$" . prettyPrintNumber($open) . "</td></tr>".
-             "<tr><th>Volume:</th><td class='right-text-align'>$volume</td></tr></table>";
+        echo "<table class='table'>".
+             "<tr><th class='center-text-align' colspan='4'>$currentStock (Apple, Inc.)</th></tr>".
+             "<tr>".
+             "<th>Quantity</th><td class='right-text-align'>$quantity</td>".
+             "<th>Current Price</th><td class='right-text-align'>$" . prettyPrintNumber($currentPrice) . "</td></tr>".
+             "</tr>".
+             "<tr>".
+             "<th>Percent Change</th><td class='right-text-align'><font color='green'>" . prettyPrintNumber($percentChange) . "%</font></td>".
+             "<th>Opening Price</th><td class='right-text-align'>$" . prettyPrintNumber($openingPrice) . "</td></tr>".
+             "</tr></table>";
     }
 }
 
