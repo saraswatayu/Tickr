@@ -37,6 +37,13 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="navigation/navigation.css" rel="stylesheet">
         <link href="dashboard.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="/js/dashboard.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
     </head>
     
     <body>
@@ -117,7 +124,7 @@
                     <!--Search-->
                     <form>
                         <div class="form-group">
-                            <label class="sr-only" for="search">Search</label>
+                            <label class="sr-only">Search</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search for...">
                                 <span class="input-group-btn">
@@ -166,9 +173,12 @@
                             <h3 class="panel-title">Time</h3>
                         </div>
                         <div class="panel-body">
+                           <h4>
+                                <div id="date"></div>
+                            </h4>
                             <h4>
-                            02:34:45
-                            <small>EST</small>
+                            <div id="time" style="color: #000000;"></div>
+                            <!--<small></small>-->
                             </h4>
                         </div>
                     </div>
