@@ -167,28 +167,18 @@
                 
                 <!--Right Content-->
                 <div class="col-md-3">
-                    <!--Time-->
+                    <!--Information-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Time</h3>
+                            <h3 class="panel-title">Information</h3>
                         </div>
                         <div class="panel-body">
-                           <h4>
-                                <div id="date"></div>
-                            </h4>
                             <h4>
-                            <div id="time" style="color: #000000;"></div>
-                            <!--<small></small>-->
+                                <div id="time" style="color: #000000;"></div>
+                                <small><div id="date"></div></small>
                             </h4>
-                        </div>
-                    </div>
-                    
-                    <!--Bank Information-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Account Information</h3>
-                        </div>
-                        <div class="panel-body">
+                            <hr>
+                            
                             <h4>
                             <?php printCurrentBalance(); ?>
                             <small>in funds remaining</small>
@@ -198,6 +188,17 @@
                             $0
                             <small>current portfolio value</small>
                             </h4>
+                        </div>
+                    </div>
+                    
+                    <!--User Manual-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">User Manual</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-default">Download User Manual</button>
                         </div>
                     </div>
                     
@@ -219,7 +220,7 @@
                         </div>
                         
                         <table class="table table-hover">
-                            <?php printTickerList(); ?>
+                            <?php printWatchlist(); ?>
                         </table>
                     </div>
                 </div>

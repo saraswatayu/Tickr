@@ -4,7 +4,7 @@ $stocks = array('TWTR', 'BAC', 'AAPL', 'GOOG', 'TSLA', 'YHOO', 'FREY');
 
 $currentStock = 'AAPL';
 
-function printTickerList() {
+function printWatchlist() {
     global $stocks;
     
     foreach ($stocks as $stock) {
