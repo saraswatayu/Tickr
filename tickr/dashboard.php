@@ -43,7 +43,18 @@
         <script src="/js/bootstrap.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-
+        
+        <!--News-->
+        <script src="newsbox/jquery-1.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+        <script src="newsbox/jquery.rss.js"></script>
+        <script>
+            jQuery(function($) {
+                $("#news-widget").rss("http://finance.yahoo.com/rss/headline?s=yhoo,msft,tivo", {
+                    limit: 4
+                })
+            })
+        </script>
     </head>
     
     <body>
@@ -162,6 +173,16 @@
                             <h3 class="panel-title">Stock Information</h3>
                         </div>
                         <?php printCurrentStockInformation(); ?>
+                    </div>
+                    
+                    <!--News Widget-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">News</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="news-widget"></div>
+                        </div>
                     </div>
                 </div>
                 
