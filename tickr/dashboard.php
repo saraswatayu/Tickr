@@ -215,11 +215,12 @@
                     <!--User Manual-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">User Manual</h3>
+                            <h3 class="panel-title"> User Manual </a></h3>
                         </div>
                         
                         <div class="panel-body">
-                            <button type="button" class="btn btn-default">Download User Manual</button>
+                            <button type="button" class="btn btn-default">
+                                <a href="manual/helpmanual.pdf" download>Download User Manual </a></button>
                         </div>
                     </div>
                     
