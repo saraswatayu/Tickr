@@ -9,7 +9,8 @@ function printWatchlist() {
     
     foreach ($stocks as $stock) {
         echo "<tr>".
-             "<td>$stock</td>".
+             "<td><button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button></td>".
+             "<td>$stock (Apple, Inc.)</td>".
              "<td class='right-text-align'><label class='checkbox-inline'><input type='checkbox' value=''></label></td>".
              "</tr>";
     }
