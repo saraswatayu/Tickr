@@ -1,8 +1,12 @@
 <?php require __DIR__ . '/vendor/autoload.php';?>
 
 <?php include('dataManager.php'); ?>
+<<<<<<< HEAD
 <?php include('stockManager.php'); ?>
 <?php include('stockGrapher.php'); ?>
+=======
+<?php include('APIManager.php'); ?>
+>>>>>>> master
 
 <?php 
 /*
@@ -77,9 +81,18 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Import</h3>
                         </div>
-                        
+
+                    <!--CSV Uploading-->
                         <div class="panel-body">
-                            <button type="button" class="btn btn-default">Upload .CSV</button>
+
+                            <form action="import.php" method="post" enctype="multipart/form-data">
+                                <input type="file" name="csv_file" id="csv_file" class="file_input">
+                                <input type="submit" value="Upload .CSV" id="upload_btn">
+                            </form>
+
+
+
+                    <!--<button type="button" class="btn btn-default">Upload .CSV</button>-->
                         </div>
                     </div>
                     
@@ -197,6 +210,18 @@
                         </div>
                         <div class="panel-body">
                             <div id="news-widget"></div>
+                        </div>
+                    </div>
+                    
+                    <!--Testbox-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Test</h3>
+                        </div>
+                        <div class="panel-body">
+                            <?php
+                                getHistoricalDataForStock('AAPL', '10');
+                            ?>
                         </div>
                     </div>
                 </div>

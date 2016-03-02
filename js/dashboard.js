@@ -29,12 +29,12 @@ function timerIncrement() {
     }
 }
 
-$(document).ready(function(){
-    $("#my-input").typeahead({
-        source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
-        , minLength: 1
-    });
-});
+//$(document).ready(function(){
+//    $("#my-input").typeahead({
+//        source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
+//        , minLength: 1
+//    });
+//});
 
 function myFunction() {
     document.getElementById("buy").remove();
