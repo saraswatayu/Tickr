@@ -1,5 +1,5 @@
 <?php include('dataManager.php'); ?>
-<?php include('stockManager.php'); ?>
+<?php include('APIManager.php'); ?>
 
 <?php 
 /*
@@ -182,6 +182,18 @@
                         </div>
                         <div class="panel-body">
                             <div id="news-widget"></div>
+                        </div>
+                    </div>
+                    
+                    <!--Testbox-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Test</h3>
+                        </div>
+                        <div class="panel-body">
+                            <?php
+                                getHistoricalDataForStock('AAPL', '10');
+                            ?>
                         </div>
                     </div>
                 </div>
