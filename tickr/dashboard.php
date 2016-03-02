@@ -37,6 +37,24 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="navigation/navigation.css" rel="stylesheet">
         <link href="dashboard.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="/js/dashboard.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+        
+        <!--News-->
+        <script src="newsbox/jquery-1.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+        <script src="newsbox/jquery.rss.js"></script>
+        <script>
+            jQuery(function($) {
+                $("#news-widget").rss("http://finance.yahoo.com/rss/headline?s=yhoo,msft,tivo", {
+                    limit: 4
+                })
+            })
+        </script>
     </head>
     
     <body>
@@ -117,7 +135,7 @@
                     <!--Search-->
                     <form>
                         <div class="form-group">
-                            <label class="sr-only" for="search">Search</label>
+                            <label class="sr-only">Search</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search for...">
                                 <span class="input-group-btn">
@@ -156,29 +174,32 @@
                         </div>
                         <?php printCurrentStockInformation(); ?>
                     </div>
+                    
+                    <!--News Widget-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">News</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="news-widget"></div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!--Right Content-->
                 <div class="col-md-3">
-                    <!--Time-->
+                    <!--Information-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Time</h3>
+                            <h3 class="panel-title">Information</h3>
                         </div>
                         <div class="panel-body">
                             <h4>
-                            02:34:45
-                            <small>EST</small>
+                                <div id="time" style="color: #000000;"></div>
+                                <small><div id="date"></div></small>
                             </h4>
-                        </div>
-                    </div>
-                    
-                    <!--Bank Information-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Account Information</h3>
-                        </div>
-                        <div class="panel-body">
+                            <hr>
+                            
                             <h4>
                             <?php printCurrentBalance(); ?>
                             <small>in funds remaining</small>
@@ -188,6 +209,18 @@
                             $0
                             <small>current portfolio value</small>
                             </h4>
+                        </div>
+                    </div>
+                    
+                    <!--User Manual-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"> User Manual</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-default">
+                                <a href="manual/helpmanual.pdf" download>Download User Manual </a></button>
                         </div>
                     </div>
                     
@@ -205,11 +238,11 @@
                     <!--Watchlist-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Stock Listing</h3>
+                            <h3 class="panel-title">Watchlist</h3>
                         </div>
                         
                         <table class="table table-hover">
-                            <?php printTickerList(); ?>
+                            <?php printWatchlist(); ?>
                         </table>
                     </div>
                 </div>
