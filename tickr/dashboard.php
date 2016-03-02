@@ -1,5 +1,12 @@
+<?php require __DIR__ . '/vendor/autoload.php';?>
+
 <?php include('dataManager.php'); ?>
+<<<<<<< HEAD
+<?php include('stockManager.php'); ?>
+<?php include('stockGrapher.php'); ?>
+=======
 <?php include('APIManager.php'); ?>
+>>>>>>> master
 
 <?php 
 /*
@@ -161,9 +168,21 @@
                         </div>
                         
                         <div class="panel-body">
-                            <div class="well">
-                                graph goes here
+                            <div id="container">
+                                <html>
+                                    <head>
+                                        <title>Basic Line</title>
+                                        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                                        <?php $chart->printScripts(); ?>
+                                    </head>
+                                    <body>
+                                        <div id="container"></div>
+                                        <script type="text/javascript"><?php echo $chart->render("chart1"); ?></script>
+                                    </body>
+                                </html>
                             </div>
+
+                            <?php addToGraph(); ?>
                             
                             <div class="btn-group" role="group" aria-label="graph-span-picker">
                                 <button type="button" class="btn btn-default">1 Day</button>
