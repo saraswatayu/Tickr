@@ -14,7 +14,9 @@ $(function () {
             chart: {
                 renderTo: 'container'
             },
-
+            title: {
+                text: 'Portfolio Stocks'  
+            },
             rangeSelector: {
                 selected: 4
             },
