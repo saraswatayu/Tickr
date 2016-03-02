@@ -74,9 +74,18 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Import</h3>
                         </div>
-                        
+
+                    <!--CSV Uploading-->
                         <div class="panel-body">
-                            <button type="button" class="btn btn-default">Upload .CSV</button>
+
+                            <form action="import.php" method="post" enctype="multipart/form-data">
+                                <input type="file" name="csv_file" id="csv_file" class="file_input">
+                                <input type="submit" value="Upload .CSV" id="upload_btn">
+                            </form>
+
+
+
+                    <!--<button type="button" class="btn btn-default">Upload .CSV</button>-->
                         </div>
                     </div>
                     
