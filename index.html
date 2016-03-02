@@ -1,4 +1,5 @@
 <html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <head>
   	<title>Tickr</title>
     	<!-- Bootstrap core CSS -->
@@ -14,26 +15,43 @@
         </style>
           
   </head>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#signInButton').click(function() {
+        $.ajax({
+          type: 'POST',
+          data: {
+            email: $('#email').val(),
+            password: $('#password').val(),
+            action: 'signIn'
+          },
+          dataType: 'json',
+          url: 'ajaxCalls.php'
+        });
+      });
+    });
+  </script>
   <body>
       
     <body style="background-color:#222222;">
   	<div class="container">
 
-        <form class="form-signin" method="POST" action="signin.php">
+       <!-- <form class="form-signin" method="POST" action="signin.php">-->
+       <form class="form-signin">
           <h2 class="form-signin-heading"><font color="white">Tickr</h2></font>
           
           <h4 class="form-signin-heading">
               <font color="white">Enter your
-                  <font color="purple">Email</font> and
-                  <font color="red">Password</font> to
-                  <font color="orange"> Sign in</font></h2>
+                  <font color="purple">email</font> and
+                  <font color="red">password</font> to
+                  <font color="orange"> sign in</font></h2>
               </font>
           
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+          <label for="inputEmail" class="sr-only" >Email address</label>
+          <input type="email" id="email" class="form-control" placeholder="Email address" autofocus>
+          <label for="inputPassword" class="sr-only" >Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Password">
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="signInButton">Sign in</button>
           <a href="file:///Users/savior15lsma/Desktop/Tickr/index2.html">Register</a></p>
           <a href="file:///Users/savior15lsma/Desktop/Tickr/index3.html">Forgot Password?</a></p>
           <a href="file:///Users/savior15lsma/Desktop/Tickr/index4.html">Change Password</a></p>
@@ -44,3 +62,6 @@
       </div> <!-- /container -->
   </body>
 </html>
+
+
+<!--$http.post('SignInData/testSignIn2.php', {email: email, password: password);-->
