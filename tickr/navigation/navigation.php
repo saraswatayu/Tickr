@@ -4,6 +4,6 @@
             <a class="navbar-brand">Tickr</a>
         </div>
 
-        <p class="navbar-text navbar-right"><a href="#" class="navbar-link">Log Out</a></p>
+        <p class="navbar-text navbar-right"><a href="../index.html" class="navbar-link">Log Out</a></p>
     </div>
 </nav>

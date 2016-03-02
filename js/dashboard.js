@@ -25,7 +25,7 @@ $(document).ready(function () {
 function timerIncrement() {
     idleTime = idleTime + 1;
     if (idleTime > 4) { //greater than 5 minutes, the page will reset right now
-        window.location.reload();
+        window.location = "../index.html"
     }
 }
 
