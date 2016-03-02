@@ -1,4 +1,5 @@
 <?php include('dataManager.php'); ?>
+<?php include('stockGrapher.php'); ?>
 <?php include('APIManager.php'); ?>
 
 <?php 

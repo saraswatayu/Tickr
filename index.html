@@ -15,9 +15,10 @@
         </style>
           
   </head>
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     $(document).ready(function() {
       $('#signInButton').click(function() {
+        alert("first alert");
         $.ajax({
           type: 'POST',
           data: {
@@ -25,19 +26,24 @@
             password: $('#password').val(),
             action: 'signIn'
           },
-          dataType: 'json',
-          url: 'ajaxCalls.php'
+          dataType: 'text',
+          url: 'ajaxCalls.php',
+          success: function(data) {
+            alert("Success!");
+            var result = data;
+            alert(result);
+          },
         });
       });
     });
-  </script>
+  </script>-->
   <body>
       
     <body style="background-color:#222222;">
   	<div class="container">
 
-       <!-- <form class="form-signin" method="POST" action="signin.php">-->
-       <form class="form-signin">
+       <form class="form-signin" method="POST" action="signin.php">
+       <!--<form class="form-signin">-->
           <h2 class="form-signin-heading"><font color="white">Tickr</h2></font>
           
           <h4 class="form-signin-heading">
@@ -48,13 +54,13 @@
               </font>
           
           <label for="inputEmail" class="sr-only" >Email address</label>
-          <input type="email" id="email" class="form-control" placeholder="Email address" autofocus>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Email address" autofocus>
           <label for="inputPassword" class="sr-only" >Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password">
           <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="signInButton">Sign in</button>
-          <a href="file:///Users/savior15lsma/Desktop/Tickr/index2.html">Register</a></p>
-          <a href="file:///Users/savior15lsma/Desktop/Tickr/index3.html">Forgot Password?</a></p>
-          <a href="file:///Users/savior15lsma/Desktop/Tickr/index4.html">Change Password</a></p>
+          <a href="index2.html">Register</a></p>
+          <a href="index3.html">Forgot Password?</a></p>
+          <a href="index4.html">Change Password</a></p>
 
 
 
