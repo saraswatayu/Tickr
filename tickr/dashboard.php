@@ -1,12 +1,8 @@
 <?php require __DIR__ . '/vendor/autoload.php';?>
 
 <?php include('dataManager.php'); ?>
-<<<<<<< HEAD
-<?php include('stockManager.php'); ?>
 <?php include('stockGrapher.php'); ?>
-=======
 <?php include('APIManager.php'); ?>
->>>>>>> master
 
 <?php 
 /*
