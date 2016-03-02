@@ -1,5 +1,3 @@
-<?php require __DIR__ . '/vendor/autoload.php';?>
-
 <?php include('dataManager.php'); ?>
 <?php include('stockGrapher.php'); ?>
 <?php include('APIManager.php'); ?>
@@ -58,6 +56,11 @@
                 })
             })
         </script>
+        
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <script src="/js/grapher.js"></script>
+
     </head>
     
     <body>
@@ -77,18 +80,9 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Import</h3>
                         </div>
-
-                    <!--CSV Uploading-->
+                        
                         <div class="panel-body">
-
-                            <form action="import.php" method="post" enctype="multipart/form-data">
-                                <input type="file" name="csv_file" id="csv_file" class="file_input">
-                                <input type="submit" value="Upload .CSV" id="upload_btn">
-                            </form>
-
-
-
-                    <!--<button type="button" class="btn btn-default">Upload .CSV</button>-->
+                            <button type="button" class="btn btn-default">Upload .CSV</button>
                         </div>
                     </div>
                     
@@ -164,21 +158,7 @@
                         </div>
                         
                         <div class="panel-body">
-                            <div id="container">
-                                <html>
-                                    <head>
-                                        <title>Basic Line</title>
-                                        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                                        <?php $chart->printScripts(); ?>
-                                    </head>
-                                    <body>
-                                        <div id="container"></div>
-                                        <script type="text/javascript"><?php echo $chart->render("chart1"); ?></script>
-                                    </body>
-                                </html>
-                            </div>
-
-                            <?php addToGraph(); ?>
+                            <div id="container" style="width:100%; height:400px;"></div>
                             
                             <div class="btn-group" role="group" aria-label="graph-span-picker">
                                 <button type="button" class="btn btn-default">1 Day</button>
@@ -206,18 +186,6 @@
                         </div>
                         <div class="panel-body">
                             <div id="news-widget"></div>
-                        </div>
-                    </div>
-                    
-                    <!--Testbox-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Test</h3>
-                        </div>
-                        <div class="panel-body">
-                            <?php
-                                getHistoricalDataForStock('AAPL', '10');
-                            ?>
                         </div>
                     </div>
                 </div>

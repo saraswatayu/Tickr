@@ -89,13 +89,12 @@ function printCurrentStockInformation() {
 function getHistoricalDataForStock($symbol, $days) {
     $yf = new YahooFinance;
     $historicalData = json_decode($yf->getHistoricalData($symbol, date('Y-m-d', strtotime('-' . $days . ' days')), date('Y-m-d',time())));
-    
-    $data = array('');
+
     foreach ($historicalData->query->results->quote as $stock) {
-        $data[$stock->Date] = $stock->Close;   
+        $data[] = (float)number_format((float)$stock->Close, 2, '.', '');
     }
     
-    echo var_dump($data);
+    return $data;
 }
 
 ?>
