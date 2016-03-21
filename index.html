@@ -15,6 +15,17 @@
         </style>
           
   </head>
+  <script>
+    $(document).ready(function() { //display error message when fields are blank
+      $('#signInButton').on('click', function(e) {
+        if ( $('#email').val() == '' && $('#password').val() == '' ){
+          console.log('test');
+          $('#errors').html('Error: fields are blank');
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
   <!--<script type="text/javascript">
     $(document).ready(function() {
       $('#signInButton').click(function() {
@@ -45,7 +56,7 @@
        <form class="form-signin" method="POST" action="signin.php">
        <!--<form class="form-signin">-->
           <h2 class="form-signin-heading"><font color="white">Tickr</h2></font>
-          
+          <div id="errors"></div>
           <h4 class="form-signin-heading">
               <font color="white">Enter your
                   <font color="purple">email</font> and
@@ -57,7 +68,9 @@
           <input type="email" name="email" id="email" class="form-control" placeholder="Email address" autofocus>
           <label for="inputPassword" class="sr-only" >Password</label>
           <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="signInButton">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" id="signInButton">Sign in</button>
+          
+          
           <a href="index2.html">Register</a></p>
           <a href="index3.html">Forgot Password?</a></p>
           <a href="index4.html">Change Password</a></p>
