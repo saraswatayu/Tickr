@@ -1,8 +1,8 @@
 <?php
-$result = $_POST['action'];
-//error_log($result);
-
-switch($result) {
+if (isset($_POST['action'])) {
+    $result = $_POST['action'];
+    
+    switch($result) {
 	case "signIn":
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -11,12 +11,16 @@ switch($result) {
 	break;
 }
 
+}
+//error_log($result);
+
+
 
 
 function signIn($email, $password) {
 	
 	//connecting to the database
-	$db = new mysqli("127.0.0.1", "root", "root", "tickr_database");
+	$db = new mysqli("127.0.0.1", "root", "", "tickr_database");
 	//checking for errors 
 	if($db->connect_errno > 0){
 		//error_log("ERROR!! DATABASE ERROR");

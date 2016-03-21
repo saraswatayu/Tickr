@@ -1,7 +1,10 @@
 //file to handle logout when user clicks the logout button
 
 <?php
+
+if (!isset($_SESSION)) {
     session_start();
+}
     
     if(!isset($_SESSION['user']))
     {
@@ -18,16 +21,13 @@
         unset($_SESSION['user']);
         header("Location: index.php");
     }
-    ?>
 
-/*
-or just this?
- 
- <?php
- session_start();
- unset($_SESSION['sess_user']);
- session_destroy();
- header("location:login.php");
- ?>
-
-*/
+    function signOut($username) {
+		if(isset($username) && strlen($username) > 0) {
+            unset($username);
+            return true;
+        } else {
+       	    return false; 
+		}
+    }
+?>

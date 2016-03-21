@@ -1,6 +1,6 @@
 <?php
 //function for correct sign in 
-function signIn() { ?>
+function signInCorrectly() { ?>
 	<script type="text/javascript">
 		window.location = "tickr/dashboard.php";
 	</script>  
@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
 	$password = $_POST['password'];
 	
 	//connecting to the database
-	$db = new mysqli("127.0.0.1", "root", "root", "tickr_database");
+	$db = new mysqli("127.0.0.1", "root", "", "tickr_database");
 	//checking for errors 
 	if($db->connect_errno > 0){
 		//error_log("ERROR!! DATABASE ERROR");
@@ -36,7 +36,7 @@ if(isset($_POST['submit']))
 		incorrectEmail();
 	} else {
 		//yes results (correct login)...redirect them to the dashboard
-		signIn();
+		signInCorrectly();
 	}
 }
 
